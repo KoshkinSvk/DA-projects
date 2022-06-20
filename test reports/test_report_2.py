@@ -14,14 +14,14 @@ connection = {
     'host': 'https://clickhouse.lab.karpov.courses',
     'password': 'dpo_python_2020',
     'user': 'student',
-    'database': 'simulator_20220420'
+    'database': 'simulator_20220520'
     }
 
 q1 = ''' SELECT toDate(time) as date,
                 uniqExact(user_id) as m_users,
                 count(user_id) as messages,
                 messages / m_users as m_per_user
-         FROM simulator_20220420.message_actions
+         FROM simulator_20220520.message_actions
          WHERE toDate(time) between today()-7 and today()-1
          GROUP BY date
          ORDER BY date
@@ -36,14 +36,14 @@ q2 = '''SELECT uniqExact(user_id) as new_users,
              FROM 
                     (SELECT user_id,
                             MIN(toDate(time)) as prev_time
-                     FROM simulator_20220420.feed_actions
+                     FROM simulator_20220520.feed_actions
                      WHERE toDate(time) between today()-30 and today()-1
                      GROUP BY user_id
                      ORDER BY user_id
                 UNION ALL
                      SELECT user_id,
                             MIN(toDate(time)) as prev_time
-                     FROM simulator_20220420.message_actions
+                     FROM simulator_20220520.message_actions
                      WHERE toDate(time) between today()-30 and today()-1
                      GROUP BY user_id
                      ORDER BY user_id) t1
