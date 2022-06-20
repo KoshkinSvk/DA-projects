@@ -51,7 +51,7 @@ def alarm(chat=None):
                                     countIf(user_id, action = 'like') as likes,
                                     countIf(user_id, action = 'view') as views,
                                     100 * likes / views as CTR
-                            FROM simulator_20220420.feed_actions
+                            FROM simulator_20220520.feed_actions
                             WHERE ts >= today()-1  and ts < toStartOfFifteenMinutes(now())
                             GROUP BY ts, date, hm
                             ORDER BY ts) t1
@@ -62,7 +62,7 @@ def alarm(chat=None):
                                     formatDateTime(ts, '%R') as hm,
                                     uniqExact(user_id) as messenger_users,
                                     count(user_id) as messages
-                            FROM simulator_20220420.message_actions
+                            FROM simulator_20220520.message_actions
                             WHERE ts >= today()-1 and ts < toStartOfFifteenMinutes(now())
                             GROUP BY ts, date, hm
                             ORDER BY ts) t2
