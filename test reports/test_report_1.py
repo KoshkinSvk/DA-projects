@@ -14,13 +14,13 @@ connection = {
     'host': 'https://clickhouse.lab.karpov.courses',
     'password': 'dpo_python_2020',
     'user': 'student',
-    'database': 'simulator_20220420'
+    'database': 'simulator_20220520'
     }
 
 q1 = ''' SELECT toDate(time) AS date,
                 COUNT(DISTINCT(user_id)) as DAU
-         FROM simulator_20220420.feed_actions
-         WHERE toDate(time) between  today() - 8 and today() - 1
+         FROM simulator_20220520.feed_actions
+         WHERE toDate(time) between  today() - 7 and today() - 1
          GROUP BY date
          ORDER BY date
 '''
@@ -30,8 +30,8 @@ q2 = ''' SELECT countIf(user_id, action = 'like') as likes,
                countIf(action = 'view') as views,
                100 * likes/ views as CTR,
                toDate(time) AS date
-        FROM simulator_20220420.feed_actions
-        WHERE toDate(time) between  today() - 8 and today() - 1
+        FROM simulator_20220520.feed_actions
+        WHERE toDate(time) between  today() - 7 and today() - 1
         GROUP BY date
         ORDER BY date
 '''
