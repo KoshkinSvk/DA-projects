@@ -1,6 +1,7 @@
 # DA-projects
 
 - [ARPU metric](https://github.com/KoshkinSvk/DA-projects/tree/main/ARPU_analysis) -  Кейс метрики ARPU (average revenue per user) аудитории сайта за май 2019 года.
+- [call_center_metrics](https://github.com/KoshkinSvk/DA-projects/tree/main/call_center_metrics) - EDA работы коллцентра, расчет конверсии перехода на оператора и метрик СВЗ и СВУ.
 - [Credit scoring](https://github.com/KoshkinSvk/DA-projects/tree/main/Credit%20scoring) - Построение моделей кредитного скоринга клиентов банка, а также оценка точности предсказания.
 - [Multilabels predictions](https://github.com/KoshkinSvk/DA-projects/tree/main/Multilabels%20prediction) - Построение моделей предсказания линейной зависимости с множественными лейблами, поиск наиболее важных признаков для предсказания.
 - [Rental analysis](https://github.com/KoshkinSvk/DA-projects/tree/main/RE_analysis) - Анализ рынка недвижимости в Санкт-Петербурге и ЛО.
